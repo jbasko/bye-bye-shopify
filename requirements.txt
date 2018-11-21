@@ -1,0 +1,10 @@
+aarghparse
+boto3
+requests
+strictus-dictus
+wr-profiles
+
+flake8
+isort
+pytest
+Pygments
