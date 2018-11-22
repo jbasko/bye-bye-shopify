@@ -26,8 +26,13 @@ setup(
     long_description=read("README.rst"),
     packages=["bye_bye_shopify"],
     python_requires=">=3.6.0",
+    install_requires=[
+        "aarghparse",
+        "strictus-dictus",
+        "wr-profiles",
+    ],
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries",
         "Programming Language :: Python",
