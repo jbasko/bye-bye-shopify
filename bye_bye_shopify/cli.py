@@ -20,6 +20,10 @@ def bye_bye_cli(subcommand, loader):
         loader.load_all()
 
 
-if __name__ == "__main__":
+def main():
     configure_logging()
     bye_bye_cli(loader=LocalLoader()).run()
+
+
+if __name__ == "__main__":
+    main()

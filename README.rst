@@ -42,9 +42,9 @@ like ``yourshopname.myshopify.com``:
 
 .. code-block:: shell
 
-    python -m bye_bye_shopify.cli --help
+    bye-bye-shopify --help
 
-    python -m bye_bye_shopify.cli download_all
+    bye-bye-shopify download_all
 
     ls -al data/products/
     ls -al data/custom_collections/

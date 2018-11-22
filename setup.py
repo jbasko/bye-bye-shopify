@@ -27,10 +27,16 @@ setup(
     packages=["bye_bye_shopify"],
     python_requires=">=3.6.0",
     install_requires=[
-        "aarghparse",
-        "strictus-dictus",
+        "aarghparse>=0.2.0",
+        "requests",
+        "strictus-dictus>=0.0.12",
         "wr-profiles",
     ],
+    entry_points={
+        "console_scripts": [
+            "bye-bye-shopify = bye_bye_shopify.cli:main",
+        ],
+    },
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
