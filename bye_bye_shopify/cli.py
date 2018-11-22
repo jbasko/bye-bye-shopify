@@ -2,7 +2,6 @@ from aarghparse import cli
 
 from .config import configure_logging
 from .loaders import LocalLoader
-from .models import Product
 
 
 @cli
@@ -10,8 +9,15 @@ def bye_bye_cli(subcommand, loader):
 
     @subcommand
     def download_products():
-        for product in Product.get_all():
-            loader.load_product(product)
+        loader.load_products()
+
+    @subcommand
+    def download_custom_collections():
+        loader.load_custom_collections()
+
+    @subcommand
+    def download_all():
+        loader.load_all()
 
 
 if __name__ == "__main__":

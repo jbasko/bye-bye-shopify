@@ -6,17 +6,45 @@ If your Shopify store isn't doing too well, it's time to close it, but Shopify d
 provide an easy way to extract all your product catalogue. This Python utility allows
 you to do that. I wrote it for and tested it only on my mom's candle store.
 
+Features
+========
+
+* Extract products and product variations to a JSON file, one per product
+* Extract product images to a local directory
+* Extract custom collections
+
+Installation
+============
+
+.. code-block:: shell
+
+    pip install bye-bye-shopify
+
 Configuration
 -------------
 
-In Shopify Admin, set up a private app and get an API key and password for it.
+In Shopify Admin, under *Apps* / *Manage private apps* (link at the very bottom
+of the page), create a new private app. The name of the app doesn't matter.
+Set the following environment variables by copying the values of *API key* and *Password*
+displayed on the page:
 
 .. code-block:: shell
 
     export BYE_BYE_API_KEY="..."
     export BYE_BYE_API_PASSWORD="..."
-    export BYE_BYE_API_HOSTNAME="..."
+
+You will also need to set the hostname of your shop which is probably something
+like ``yourshopname.myshopify.com``:
 
 .. code-block:: shell
 
-    python -m bye_bye_shopify.cli download_products
+    export BYE_BYE_API_HOSTNAME="yourshopname.myshopify.com"
+
+.. code-block:: shell
+
+    python -m bye_bye_shopify.cli --help
+
+    python -m bye_bye_shopify.cli download_all
+
+    ls -al data/products/
+    ls -al data/custom_collections/

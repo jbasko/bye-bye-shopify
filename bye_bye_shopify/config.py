@@ -21,8 +21,8 @@ class ByeByeProfile:
 
     local_loader_base_dir: str = None
 
-    product_dir_name_template: str = "{product.id}"
-    product_file_name_template: str = "{product.id}"
+    product_path_template: str = "products/{product.id}/{product.id}"
+    custom_collection_path_template: str = "custom_collections/{custom_collection.id}"
 
 
 profile = ByeByeProfile()

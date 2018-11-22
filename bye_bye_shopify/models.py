@@ -27,7 +27,7 @@ class ShopifyResource:
         else:
             params = {}
         params["page"] = page
-        params["limit"] = page_limit
+        params["limit"] = min(page_limit, limit) if limit is not None else page_limit
 
         while True:
             resp = cls.shopify.get(_path, params=params)
@@ -116,3 +116,30 @@ class Product(ShopifyResource, sdict):
     options: List[dict]
     images: List[ProductImage]
     image: Any
+
+
+class CustomCollectionImage(sdict):
+    src: str
+    alt: str
+    width: int
+    height: int
+    created_at: str
+
+
+class CustomCollection(ShopifyResource, sdict):
+    resource_name = "custom_collections"
+
+    id: int
+    body_html: str
+    handle: str
+    image: CustomCollectionImage
+    metafields: List[dict]
+    published: bool
+    published_at: str
+    published_scope: str
+    sort_order: str
+    template_suffix: str
+    title: str
+    updated_at: str
+
+    admin_graphql_api_id: str
