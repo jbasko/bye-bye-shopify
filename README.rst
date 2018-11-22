@@ -40,6 +40,11 @@ like ``yourshopname.myshopify.com``:
 
     export BYE_BYE_API_HOSTNAME="yourshopname.myshopify.com"
 
+Usage
+=====
+
+Through command-line interface:
+
 .. code-block:: shell
 
     bye-bye-shopify --help
@@ -48,3 +53,10 @@ like ``yourshopname.myshopify.com``:
 
     ls -al data/products/
     ls -al data/custom_collections/
+
+Programmatically:
+
+.. code-block:: python
+
+    from bye_bye_shopify.loaders import LocalLoader
+    LocalLoader().load_all()
