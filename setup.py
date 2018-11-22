@@ -14,15 +14,15 @@ def read(fname):
 
 setup(
     name="bye-bye-shopify",
-    version="0.0.1",  # also in __init__.py
+    version="0.0.1",
     url="https://github.com/jbasko/bye-bye-shopify",
     license="MIT",
     author="Jazeps Basko",
     author_email="jazeps.basko@gmail.com",
     maintainer="Jazeps Basko",
     maintainer_email="jazeps.basko@gmail.com",
-    description="Extract product catalogue from your Shopify store to JSON files on s3 or your computer",
-    keywords="shopify extract export products json s3",
+    description="Extract product catalogue (including images) from your Shopify store to JSON files",
+    keywords="shopify extract export products images json",
     long_description=read("README.rst"),
     packages=["bye_bye_shopify"],
     python_requires=">=3.6.0",
